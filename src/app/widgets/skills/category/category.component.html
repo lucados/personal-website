@@ -1,0 +1,89 @@
+<div
+  [style.width.px]="dynamic_w"
+  class="flex flex-col h-fit mb-5 overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2"
+>
+  <div class="flex flex-row justify-between items-center">
+    <div class="flex flex-row items-center">
+      <div class="text-2xl font-bold">{{ category.title }}</div>
+      <div
+        class="ml-3 text-[18px] font-bold text-white w-8 h-8 bg-primaryColor rounded-full text-center flex flex-col justify-center"
+      >
+        {{ category.skills.length }}
+      </div>
+    </div>
+    <div
+      (click)="expand()"
+      class="w-8 h-8 hover:bg-blue-200 hover:rounded-full"
+    >
+      @if(!expanded) {
+      <img src="https://www.svgrepo.com/show/521469/arrow-down.svg" alt="" />
+      } @else {
+      <img src="https://www.svgrepo.com/show/521486/arrow-up.svg" alt="" />
+      }
+    </div>
+  </div>
+  @if(expanded) {
+    <div @toggle class="overflow-y-hidden">
+  <!-- no group skills -->
+  @for(skill of skillsOfGroup(); track skill) {
+  <div
+    (click)="selectSkill(skill.id)"
+    class="mt-2 w-fit hover:bg-primaryColor hover:text-[16px] hover:py-0 hover:shadow-lg hover:px-3 hover:text-white hover:rounded-full"
+  >
+    {{ skill.name }}
+  </div>
+  }
+    <!-- group skills -->
+    @for(group of category.groups; track group) {
+    <div
+      class="h-2 w-full mt-3 border-b-[3px] border-dashed border-gray-400"
+    ></div>
+    <div class="text-primaryColor mt-3">// {{ group.name }}</div>
+    @if(group.type == 'string') { @for(skill of skillsOfGroup(group.name); track
+    skill) {
+    <div
+      (click)="selectSkill(skill.id)"
+      class="w-fit mt-2 hover:bg-primaryColor hover:text-[16px] hover:py-0 hover:shadow-lg hover:px-3 hover:text-white hover:rounded-full"
+    >
+      {{ skill.name }}
+    </div>
+    } } @else if(group.type == 'icon') {
+
+    <div class="w-full max-w-[270px] mt-2 flex flex-wrap self-center">
+      @for(skill of skillsOfGroup(group.name); track $index; let o = $odd) {
+      @if(($index+1) % 4 != 0 && ($index+1) % 4 != 1) { @if(o) {
+      <div class="w-1/2 h-20 flex flex-row">
+        <img
+          (mouseover)="(null)"
+          (click)="selectSkill(skill.id)"
+          class="object-contain w-[72px] h-[72px] p-2 hover:bg-blue-100 hover:py-1 hover:shadow-lg rounded-full"
+          src="{{ skill.icon }}"
+          alt=""
+        />
+      </div>
+      } @else {
+      <div class="w-1/2 h-20 flex flex-row justify-end">
+        <img
+          (mouseover)="(null)"
+          (click)="selectSkill(skill.id)"
+          class="object-contain w-[72px] h-[72px] p-2 hover:bg-blue-100 hover:py-1 hover:shadow-lg rounded-full"
+          src="{{ skill.icon }}"
+          alt=""
+        />
+      </div>
+      } } @else {
+      <div class="w-full h-20 flex flex-row justify-center">
+        <img
+          (mouseover)="(null)"
+          (click)="selectSkill(skill.id)"
+          class="object-contain w-[72px] h-[72px] p-2 hover:bg-blue-100 hover:py-1 hover:shadow-lg rounded-full"
+          src="{{ skill.icon }}"
+          alt=""
+        />
+      </div>
+      } }
+    </div>
+    } }
+  </div>
+  }
+</div>
