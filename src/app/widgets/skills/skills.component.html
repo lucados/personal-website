@@ -1,0 +1,49 @@
+<div class="bg-blue-50 pl-5 pt-5 m-11 rounded-lg border-2 border-blue-200 shadow-lg">
+    <div
+      class="flex smartphone:flex-col tablet:flex-row"
+    >
+      <div class="text-6xl font-bold text-blue-400 mr-6">Skills</div>
+      <!-- Pastilles -->
+      <!-- <div class="flex flex-wrap w-1/2 min-w-[388px] max-w-[600px]">
+        @for(cat of categoryList; track cat) {
+        <div
+          [style.background-color]="
+            isCatSelected(cat.title)
+              ? 'rgb(51 159 255)'
+              : 'rgb(255 255 255)'
+          "
+          [style.color]="
+            isCatSelected(cat.title) ? 'rgb(255 255 255)' : 'rgb(0 0 0)'
+          "
+          [style.border]="
+            isCatSelected(cat.title) ? '' : '2px solid gray'
+          "
+          class="rounded-full border-black py-1 px-3 mx-1 my-1 shadow-md h-fit font-bold text-white text-xl"
+        >
+          {{ cat.title }}
+        </div>
+        }
+      </div> -->
+    </div>
+    <div class="flex-auto w-full">
+      <div class="">
+        <div class="w-full pt-5 overflow-y-scroll h-fit">
+          <div
+            #categoryWidget
+            class="flex-row flex w-full justify-between"
+          >
+            @for(row of catMatrice; track row) {
+            <div class="flex flex-col w-full">
+              @for(col_cat of row; track col_cat) {
+              <app-category
+                [dynamic_w]="categoryWidth"
+                [category]="col_cat"
+              ></app-category>
+              }
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

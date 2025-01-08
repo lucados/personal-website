@@ -6,24 +6,27 @@ import {
   OnInit,
 } from "@angular/core";
 import { Category, categories } from "../../interfaces/category";
-import { CategoryComponent } from "../../widgets/skills/category/category.component";
-import { Experience, experiences, projects } from "../../interfaces/experience";
+import { Work, works, Project, projects } from "../../interfaces/experience";
 import { WorkComponent } from "../../widgets/experiences/work/work.component";
+import { SkillsComponent } from "../../widgets/skills/skills.component";
+import { ProjectComponent } from "../../widgets/experiences/project/project.component";
 
 @Component({
   selector: "app-home",
   standalone: true,
-  imports: [CategoryComponent, WorkComponent],
+  imports: [WorkComponent, SkillsComponent, ProjectComponent],
   templateUrl: "./home.component.html",
   styleUrl: "./home.component.css",
 })
 export class HomeComponent implements OnInit {
   categoryList: Category[] = categories;
-  workList: Experience[] = experiences;
-  dyn_cat_w: number = 288;
+  workList: Work[] = works;
+  projectList: Project[] = projects;
+
+  //dyn_cat_w: number = 288;
   //horizontal_cat: Category[] = this.categoryList;
   horizontalCatNumber!: number;
-  catMatrice!: Category[][];
+  //catMatrice!: Category[][];
 
   w_left_window!: number;
   w_right_window!: number;
@@ -44,15 +47,17 @@ export class HomeComponent implements OnInit {
   //   // => @media (min-width: 1440px) { ... }
   // };
 
-  os: string = "OS";
-  platform: string = "Platforms";
-  device: string = "Devices";
-  text: string = "// Touch something to know more...";
+  // os: string = "OS";
+  // platform: string = "Platforms";
+  // device: string = "Devices";
+  // text: string = "// Touch something to know more...";
 
   constructor() {
-    this.w_left_window = (1 / 2) * window.innerWidth - 80;
-    this.w_right_window = (1 / 2) * window.innerWidth - 80;
+    // this.w_left_window = (1 / 2) * window.innerWidth - 80;
+    // this.w_right_window = (1 / 2) * window.innerWidth - 80;
   }
+
+  
 
   isCatSelected(catTitle: string) {
     return true;
@@ -67,33 +72,33 @@ export class HomeComponent implements OnInit {
     this.grabber = true;
   }
 
-  createCategoriesMatrice() {
-    var colNumber = Math.ceil(
-      this.categoryList.length / this.horizontalCatNumber
-    );
-    this.catMatrice = [];
-    for (let i = 0; i < colNumber; i++) {
-      this.catMatrice[i] = [];
-      this.catMatrice[i] = this.categoryList.filter(
-        (element, index) =>
-          index >= i * this.horizontalCatNumber &&
-          index < (i + 1) * this.horizontalCatNumber
-      );
-    }
-    // transpose the matrice
-    var catMatriceTranspose = this.catMatrice[0].map((_, colIndex) =>
-      this.catMatrice.map((row) => row[colIndex])
-    );
-    this.catMatrice = catMatriceTranspose;
-    // remove potential undefined element (if not symetric)
-    this.catMatrice.map((row) =>
-      row.map((element, index) => {
-        if (typeof element == "undefined") {
-          row.splice(index, 1);
-        }
-      })
-    );
-  }
+  // createCategoriesMatrice() {
+  //   var colNumber = Math.ceil(
+  //     this.categoryList.length / this.horizontalCatNumber
+  //   );
+  //   this.catMatrice = [];
+  //   for (let i = 0; i < colNumber; i++) {
+  //     this.catMatrice[i] = [];
+  //     this.catMatrice[i] = this.categoryList.filter(
+  //       (element, index) =>
+  //         index >= i * this.horizontalCatNumber &&
+  //         index < (i + 1) * this.horizontalCatNumber
+  //     );
+  //   }
+  //   // transpose the matrice
+  //   var catMatriceTranspose = this.catMatrice[0].map((_, colIndex) =>
+  //     this.catMatrice.map((row) => row[colIndex])
+  //   );
+  //   this.catMatrice = catMatriceTranspose;
+  //   // remove potential undefined element (if not symetric)
+  //   this.catMatrice.map((row) =>
+  //     row.map((element, index) => {
+  //       if (typeof element == "undefined") {
+  //         row.splice(index, 1);
+  //       }
+  //     })
+  //   );
+  // }
 
   @HostListener("window:mousemove", ["$event"]) onMouseMove(event: MouseEvent) {
     event.preventDefault();
@@ -102,26 +107,26 @@ export class HomeComponent implements OnInit {
       this.w_left_window >= 576 &&
       this.w_right_window >= 576
     ) {
-      var delta = event.clientX - this.w_left_window - 76;
+      var delta = event.clientX - this.w_left_window;//- 76;
       this.w_left_window += delta;
       this.w_right_window -= delta;
-      var w = this.categoryWidget.nativeElement.offsetWidth;
-      var cat_w_padding = 288 + this.PADDING;
-      var newHorizontalCatNumber = Math.round(
-        w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-      );
+      // var w = this.categoryWidget.nativeElement.offsetWidth;
+      // var cat_w_padding = 288 + this.PADDING;
+      // var newHorizontalCatNumber = Math.round(
+      //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
+      // );
 
-      if (newHorizontalCatNumber != this.horizontalCatNumber) {
-        this.horizontalCatNumber = newHorizontalCatNumber;
-        this.createCategoriesMatrice();
-      }
-      this.dyn_cat_w = Math.min(
-        448,
-        cat_w_padding -
-          this.PADDING +
-          (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-            this.horizontalCatNumber
-      );
+      // if (newHorizontalCatNumber != this.horizontalCatNumber) {
+      //   this.horizontalCatNumber = newHorizontalCatNumber;
+      //   this.createCategoriesMatrice();
+      // }
+      // this.dyn_cat_w = Math.min(
+      //   448,
+      //   cat_w_padding -
+      //     this.PADDING +
+      //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
+      //       this.horizontalCatNumber
+      // );
     } else {
       this.grabber = false;
       if (this.w_left_window < 576) {
@@ -137,58 +142,62 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    var w = window.innerWidth / 2 - 196;
-    var cat_w_padding = 288 + this.PADDING;
-    this.horizontalCatNumber = Math.round(
-      w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-    );
-    // this.horizontal_cat = this.categoryList.filter(
-    //   (element, index) => index < this.horizontalCatNumber
+    this.w_left_window = (1 / 2) * window.innerWidth;// - 80;
+    this.w_right_window = (1 / 2) * window.innerWidth;// - 80;
+    // var w = window.innerWidth / 2 - 196;
+    // var cat_w_padding = 288 + this.PADDING;
+    // this.horizontalCatNumber = Math.round(
+    //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
     // );
+    // // this.horizontal_cat = this.categoryList.filter(
+    // //   (element, index) => index < this.horizontalCatNumber
+    // // );
 
-    this.createCategoriesMatrice();
-    this.dyn_cat_w = Math.min(
-      448,
-      cat_w_padding -
-        this.PADDING +
-        (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-          this.horizontalCatNumber
-    );
+    // this.createCategoriesMatrice();
+    // this.dyn_cat_w = Math.min(
+    //   448,
+    //   cat_w_padding -
+    //     this.PADDING +
+    //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
+    //       this.horizontalCatNumber
+    // );
   }
 
   @HostListener("window:resize", ["$event"])
   onResize() {
-    var w = this.categoryWidget.nativeElement.offsetWidth;
-    var cat_w_padding = 288 + this.PADDING;
-    this.horizontalCatNumber = Math.round(
-      w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-    );
-    // this.horizontal_cat = this.categoryList.filter(
-    //   (element, index) => index < this.horizontalCatNumber
+    this.w_left_window = (1 / 2) * window.innerWidth;
+    this.w_right_window = (1 / 2) * window.innerWidth;
+    // var w = this.categoryWidget.nativeElement.offsetWidth;
+    // var cat_w_padding = 288 + this.PADDING;
+    // this.horizontalCatNumber = Math.round(
+    //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
     // );
-    this.createCategoriesMatrice();
-    this.dyn_cat_w = Math.min(
-      448,
-      cat_w_padding -
-        this.PADDING +
-        (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-          this.horizontalCatNumber
-    );
+    // // this.horizontal_cat = this.categoryList.filter(
+    // //   (element, index) => index < this.horizontalCatNumber
+    // // );
+    // this.createCategoriesMatrice();
+    // this.dyn_cat_w = Math.min(
+    //   448,
+    //   cat_w_padding -
+    //     this.PADDING +
+    //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
+    //       this.horizontalCatNumber
+    // );
   }
 
   @ViewChild("categoryWidget", { static: false })
   categoryWidget!: ElementRef<HTMLInputElement>;
 
-  changeOS(newOs: string) {
-    this.os = newOs;
-  }
-  changePlatform(newPlatform: string) {
-    this.platform = newPlatform;
-  }
-  changeDevice(newDevice: string) {
-    this.device = newDevice;
-  }
-  changeText(newText: string) {
-    this.text = newText;
-  }
+  // changeOS(newOs: string) {
+  //   this.os = newOs;
+  // }
+  // changePlatform(newPlatform: string) {
+  //   this.platform = newPlatform;
+  // }
+  // changeDevice(newDevice: string) {
+  //   this.device = newDevice;
+  // }
+  // changeText(newText: string) {
+  //   this.text = newText;
+  // }
 }

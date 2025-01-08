@@ -1,9 +1,9 @@
 import { Component, Input } from "@angular/core";
-import { Work } from "../../../interfaces/experience";
+import { Project } from "../../../interfaces/experience";
 import { animate, style, transition, trigger } from "@angular/animations";
 
 @Component({
-  selector: "app-work",
+  selector: 'app-project',
   standalone: true,
   imports: [],
   animations: [
@@ -18,11 +18,11 @@ import { animate, style, transition, trigger } from "@angular/animations";
       ]),
     ]),
   ],
-  templateUrl: "./work.component.html",
-  styleUrl: "./work.component.css",
+  templateUrl: './project.component.html',
+  styleUrl: './project.component.css'
 })
-export class WorkComponent {
-  @Input() work!: Work;
+export class ProjectComponent {
+  @Input() project!: Project;
   expanded: boolean = false;
 
   expand() {

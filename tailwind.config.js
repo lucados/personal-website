@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "profile-picture": "url('../public/profile-picture.jpg')",
-        "profile-pic": "url('../public/profile picture.png')",
+        "profile-pic": "url('../public/profile picture.jpg')",
       },
       screens: {
         smartphone: "0px",
@@ -20,7 +20,8 @@ module.exports = {
         // => @media (min-width: 1440px) { ... }
       },
       colors: {
-        primaryColor: "#339fff",
+        //primaryColor: "#339fff",
+        primaryColor: "#3b82f6"
       },
     },
   },

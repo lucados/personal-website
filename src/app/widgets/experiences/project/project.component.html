@@ -1,0 +1,50 @@
+<div
+  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2 border-blue-200"
+>
+  <p class="text-2xl">
+    <span class="font-bold">{{ project.title }}&nbsp;</span>
+    <span>&#64;</span>
+    <span>{{ project.institution }}</span>
+    <span>, {{ project.location }}</span>
+  </p>
+  <div class="mt-2 w-fit">
+    {{ project.date }}
+  </div>
+  <!-- <div
+    [style]="expanded ? 'height: fit-content' : 'height: 124px'"
+    class="overflow-y-hidden"
+  > -->
+  @if(expanded) {
+  <div @toggle class="overflow-y-hidden">
+    @for(section of project.sections; track section) {
+    <p class="mt-3 w-fit text-justify text-2xl font-bold">
+      {{ section.title }}
+    </p>
+    <p class="mt-2 w-fit text-justify text-lg">
+      {{ section.content }}
+    </p>
+    }
+  </div>
+  }
+  <!-- </div> -->
+  <div class="flex flex-row items-center">
+    <div class="flex basis-4/5 flex-wrap mt-2">
+      @for(skill of project.skillNames; track skill) {
+      <div
+        class="rounded-full bg-primaryColor py-1 px-3 mx-1 my-1 shadow-md h-fit font-bold text-white text-xl"
+      >
+        {{ skill }}
+      </div>
+      }
+    </div>
+    <div (click)="expand()" class="basis-1/5 flex flex-row justify-end">
+      <div class="w-10 h-10 hover:bg-blue-200 hover:rounded-full">
+        @if(!expanded) {
+        <img src="https://www.svgrepo.com/show/521469/arrow-down.svg" alt="" />
+        } @else {
+        <img src="https://www.svgrepo.com/show/521486/arrow-up.svg" alt="" />
+        }
+      </div>
+    </div>
+  </div>
+</div>

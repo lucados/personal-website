@@ -1,6 +1,6 @@
 <div
   [style.width.px]="dynamic_w"
-  class="flex flex-col h-fit mb-5 overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2"
+  class="flex flex-col h-fit mb-5 overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2 border-blue-200"
 >
   <div class="flex flex-row justify-between items-center">
     <div class="flex flex-row items-center">
@@ -48,7 +48,9 @@
       {{ skill.name }}
     </div>
     } } @else if(group.type == 'icon') {
+      <div class="flex flex-row justify-center">
 
+      
     <div class="w-full max-w-[270px] mt-2 flex flex-wrap self-center">
       @for(skill of skillsOfGroup(group.name); track $index; let o = $odd) {
       @if(($index+1) % 4 != 0 && ($index+1) % 4 != 1) { @if(o) {
@@ -83,6 +85,7 @@
       </div>
       } }
     </div>
+  </div>
     } }
   </div>
   }

@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2"
+  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2 border-blue-200"
 >
   <p class="text-2xl">
     <span class="font-bold">{{ work.title }}&nbsp;</span>
@@ -30,7 +30,7 @@
   }
   <!-- </div> -->
   <div class="flex flex-row items-center">
-    <div class="flex flex-wrap flex-grow mt-2">
+    <div class="flex basis-4/5 flex-wrap mt-2">
       @for(skill of work.skillNames; track skill) {
       <div
         class="rounded-full bg-primaryColor py-1 px-3 mx-1 my-1 shadow-md h-fit font-bold text-white text-xl"
@@ -41,13 +41,14 @@
     </div>
     <div
       (click)="expand()"
-      class="w-10 h-10 hover:bg-blue-200 hover:rounded-full"
-    >
+      class="basis-1/5 flex flex-row justify-end"
+    ><div class="w-10 h-10 hover:bg-blue-200 hover:rounded-full">
       @if(!expanded) {
       <img src="https://www.svgrepo.com/show/521469/arrow-down.svg" alt="" />
       } @else {
       <img src="https://www.svgrepo.com/show/521486/arrow-up.svg" alt="" />
       }
+    </div>
     </div>
   </div>
 </div>
