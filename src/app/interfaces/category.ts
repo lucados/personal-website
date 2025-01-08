@@ -148,7 +148,7 @@ export const categories: Category[] = [
     ],
   },
   {
-    title: "Data Processing",
+    title: "Data Proc.",
     groups: [],
     skills: [
       { name: "Python", details: "a", id: "123" },
