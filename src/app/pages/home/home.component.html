@@ -98,6 +98,8 @@
             class="flex justify-end pr-11 py-2 bg-blue-300 border-b-2 border-blue-400"
           >
             <div
+              (click)="selectWidget('skills')"
+              [style.opacity]="selectedWidgets.includes('skills') ? '1' : '0.5'"
               class="cursor-pointer h-12 w-12 rounded-xl p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
@@ -106,19 +108,25 @@
               />
             </div>
             <div
-              class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white opacity-40 hover:opacity-100 hover:shadow-lg"
+              (click)="selectWidget('education')"
+              [style.opacity]="
+                selectedWidgets.includes('education') ? '1' : '0.5'
+              "
+              class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
-                src="https://www.svgrepo.com/show/296481/hobby-horse-toy.svg"
+                src="https://www.svgrepo.com/show/450824/education.svg"
                 alt=""
               />
             </div>
           </div>
           <!-- Skills -->
+          @if(selectedWidgets.includes('skills')){
           <app-skills
             [categoryList]="categoryList"
             [windowWidth]="w_left_window"
           ></app-skills>
+          }
         </div>
         <!-- right window -->
         <div
@@ -129,6 +137,8 @@
             class="flex justify-start pl-11 py-2 bg-blue-300 border-b-2 border-blue-400"
           >
             <div
+              (click)="selectWidget('works')"
+              [style.opacity]="selectedWidgets.includes('works') ? '1' : '0.5'"
               class="cursor-pointer h-12 w-12 rounded-xl p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
@@ -137,6 +147,10 @@
               />
             </div>
             <div
+              (click)="selectWidget('projects')"
+              [style.opacity]="
+                selectedWidgets.includes('projects') ? '1' : '0.5'
+              "
               class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
@@ -146,6 +160,7 @@
             </div>
           </div>
           <!-- Work Experience -->
+          @if(selectedWidgets.includes('works')){
           <div
             class="bg-blue-50 p-5 m-11 rounded-lg border-2 border-blue-200 shadow-lg"
           >
@@ -164,7 +179,9 @@
               </div>
             </div>
           </div>
-          <!-- Work Experience -->
+          }
+          <!-- Projects -->
+          @if(selectedWidgets.includes('projects')){
           <div
             class="bg-blue-50 p-5 m-11 rounded-lg border-2 border-blue-200 shadow-lg"
           >
@@ -181,17 +198,17 @@
               </div>
             </div>
           </div>
+          }
         </div>
       </div>
     </div>
   </div>
   <div class="snap-start">
-    <div class="w-full h-screen flex flex-col bg-white">
+    <div class="w-full h-screen flex flex-col bg-blue-500">
       <div class="h-16 w-full bg-blue-300"></div>
 
-      
       <video
-      class="w-full h-3/4 object-cover"
+        class="w-full h-3/4 object-cover"
         src="drone.mov"
         type="video/mov"
         autoplay

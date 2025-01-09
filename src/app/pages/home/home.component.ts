@@ -23,41 +23,23 @@ export class HomeComponent implements OnInit {
   workList: Work[] = works;
   projectList: Project[] = projects;
 
-  //dyn_cat_w: number = 288;
-  //horizontal_cat: Category[] = this.categoryList;
-  horizontalCatNumber!: number;
-  //catMatrice!: Category[][];
-
   w_left_window!: number;
   w_right_window!: number;
 
   grabber: boolean = false;
   PADDING: number = 20;
 
-  // screens = {
-  //   smartphone: "0px",
+  selectedWidgets: string[] = ['skills', 'works', 'projects'];
 
-  //   tablet: "576px",
-  //   // => @media (min-width: 576px) { ... }
-
-  //   laptop: "960px",
-  //   // => @media (min-width: 960px) { ... }
-
-  //   desktop: "1440px",
-  //   // => @media (min-width: 1440px) { ... }
-  // };
-
-  // os: string = "OS";
-  // platform: string = "Platforms";
-  // device: string = "Devices";
-  // text: string = "// Touch something to know more...";
-
-  constructor() {
-    // this.w_left_window = (1 / 2) * window.innerWidth - 80;
-    // this.w_right_window = (1 / 2) * window.innerWidth - 80;
+  selectWidget(widgetTitle: string) {
+    if(this.selectedWidgets.includes(widgetTitle)) {
+      var index = this.selectedWidgets.indexOf(widgetTitle);
+      this.selectedWidgets.splice(index, 1);
+    }
+    else {
+      this.selectedWidgets.push(widgetTitle);
+    }
   }
-
-  
 
   isCatSelected(catTitle: string) {
     return true;
@@ -72,34 +54,6 @@ export class HomeComponent implements OnInit {
     this.grabber = true;
   }
 
-  // createCategoriesMatrice() {
-  //   var colNumber = Math.ceil(
-  //     this.categoryList.length / this.horizontalCatNumber
-  //   );
-  //   this.catMatrice = [];
-  //   for (let i = 0; i < colNumber; i++) {
-  //     this.catMatrice[i] = [];
-  //     this.catMatrice[i] = this.categoryList.filter(
-  //       (element, index) =>
-  //         index >= i * this.horizontalCatNumber &&
-  //         index < (i + 1) * this.horizontalCatNumber
-  //     );
-  //   }
-  //   // transpose the matrice
-  //   var catMatriceTranspose = this.catMatrice[0].map((_, colIndex) =>
-  //     this.catMatrice.map((row) => row[colIndex])
-  //   );
-  //   this.catMatrice = catMatriceTranspose;
-  //   // remove potential undefined element (if not symetric)
-  //   this.catMatrice.map((row) =>
-  //     row.map((element, index) => {
-  //       if (typeof element == "undefined") {
-  //         row.splice(index, 1);
-  //       }
-  //     })
-  //   );
-  // }
-
   @HostListener("window:mousemove", ["$event"]) onMouseMove(event: MouseEvent) {
     event.preventDefault();
     if (
@@ -107,26 +61,9 @@ export class HomeComponent implements OnInit {
       this.w_left_window >= 576 &&
       this.w_right_window >= 576
     ) {
-      var delta = event.clientX - this.w_left_window;//- 76;
+      var delta = event.clientX - this.w_left_window;
       this.w_left_window += delta;
       this.w_right_window -= delta;
-      // var w = this.categoryWidget.nativeElement.offsetWidth;
-      // var cat_w_padding = 288 + this.PADDING;
-      // var newHorizontalCatNumber = Math.round(
-      //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-      // );
-
-      // if (newHorizontalCatNumber != this.horizontalCatNumber) {
-      //   this.horizontalCatNumber = newHorizontalCatNumber;
-      //   this.createCategoriesMatrice();
-      // }
-      // this.dyn_cat_w = Math.min(
-      //   448,
-      //   cat_w_padding -
-      //     this.PADDING +
-      //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-      //       this.horizontalCatNumber
-      // );
     } else {
       this.grabber = false;
       if (this.w_left_window < 576) {
@@ -142,62 +79,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.w_left_window = (1 / 2) * window.innerWidth;// - 80;
-    this.w_right_window = (1 / 2) * window.innerWidth;// - 80;
-    // var w = window.innerWidth / 2 - 196;
-    // var cat_w_padding = 288 + this.PADDING;
-    // this.horizontalCatNumber = Math.round(
-    //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-    // );
-    // // this.horizontal_cat = this.categoryList.filter(
-    // //   (element, index) => index < this.horizontalCatNumber
-    // // );
-
-    // this.createCategoriesMatrice();
-    // this.dyn_cat_w = Math.min(
-    //   448,
-    //   cat_w_padding -
-    //     this.PADDING +
-    //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-    //       this.horizontalCatNumber
-    // );
+    this.w_left_window = (1 / 2) * window.innerWidth;
+    this.w_right_window = (1 / 2) * window.innerWidth;
   }
 
   @HostListener("window:resize", ["$event"])
   onResize() {
     this.w_left_window = (1 / 2) * window.innerWidth;
     this.w_right_window = (1 / 2) * window.innerWidth;
-    // var w = this.categoryWidget.nativeElement.offsetWidth;
-    // var cat_w_padding = 288 + this.PADDING;
-    // this.horizontalCatNumber = Math.round(
-    //   w / cat_w_padding - (w % cat_w_padding) / cat_w_padding
-    // );
-    // // this.horizontal_cat = this.categoryList.filter(
-    // //   (element, index) => index < this.horizontalCatNumber
-    // // );
-    // this.createCategoriesMatrice();
-    // this.dyn_cat_w = Math.min(
-    //   448,
-    //   cat_w_padding -
-    //     this.PADDING +
-    //     (((w % cat_w_padding) / cat_w_padding) * cat_w_padding) /
-    //       this.horizontalCatNumber
-    // );
   }
 
   @ViewChild("categoryWidget", { static: false })
   categoryWidget!: ElementRef<HTMLInputElement>;
 
-  // changeOS(newOs: string) {
-  //   this.os = newOs;
-  // }
-  // changePlatform(newPlatform: string) {
-  //   this.platform = newPlatform;
-  // }
-  // changeDevice(newDevice: string) {
-  //   this.device = newDevice;
-  // }
-  // changeText(newText: string) {
-  //   this.text = newText;
-  // }
 }

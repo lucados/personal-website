@@ -157,6 +157,7 @@ export const categories: Category[] = [
       { name: "Machine Learning", details: "d", id: "123" },
       { name: "MATLAB", details: "e", id: "123" },
       { name: "VBA", details: "f", id: "123" },
+      { name: "Elistat", details: "f", id: "123" },
     ],
   },
   {
@@ -165,9 +166,9 @@ export const categories: Category[] = [
     skills: [
       { name: "IoT", details: "a", id: "123" },
       { name: "Robotics & control", details: "b", id: "123" },
-      { name: "CAD", details: "c", id: "123" },
-      { name: "FEA", details: "d", id: "123" },
-      { name: "Design Opti.", details: "e", id: "123" },
+      { name: "CAD (Creo)", details: "c", id: "123" },
+      { name: "FEA (Ansys)", details: "d", id: "123" },
+      { name: "Design Opti. (OptiSLang)", details: "e", id: "123" },
       { name: "Manufacturing", details: "f", id: "123" },
     ],
   },

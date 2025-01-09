@@ -53,7 +53,7 @@ export const works: Work[] = [
       "Analysis of a mechanical issue in the watch assembly process, resulting in the adoption of new production standards.",
       "Characterization and integration of a new type of gold with unusual mechanical properties.",
     ],
-    skillNames: ["Python", "VBA", "Ansys"],
+    skillNames: ["Python", "VBA", "Ansys", "Creo", "OptiSLang", "Elistat"],
   },
 ];
 
@@ -74,7 +74,7 @@ export const projects: Project[] = [
         content: "There were good results !",
       },
     ],
-    skillNames: ["Python", "TensorFlow", "Flutter", "C++"],
+    skillNames: ["Python", "Flutter", "C++", "MQTT", "Docker", "GCP", "Edge/Cloud Comput.", "IoT"],
   },
   {
     title: "Dynamic PV's solar power forecasting",
@@ -86,7 +86,8 @@ export const projects: Project[] = [
         content: "I used the application to implement a custom machine learning model as an edge process. This to enable dynamic prediction of future power values of the University of Sydney's solar panels. This implementation offers improved control over energy management and distribution across the university, optimizing resource utilization and promoting sustainability.",
         img: "Dynamic_processing.png"
       }
-    ]
+    ],
+    skillNames: ["Python", "TensorFlow", "TFLite", "Machine Learning", "GCP", "Edge/Cloud Comput.", "IoT"],
   },
   {
     title: "Train comfort analysis ",
@@ -98,6 +99,7 @@ export const projects: Project[] = [
         content: "I used the application to monitor accelerations and GPS positions during train rides using an iPhone. Utilizing edge processing, I processed the data directly at the edge to map locations where the acceleration exceeded a certain threshold, indicative of discomfort for passengers. This analysis provided valuable insights for optimizing train routes and enhancing passenger comfort.",
         img: "edge_processing.png"
       }
-    ]
+    ],
+    skillNames: ["Python", "GCP", "Edge/Cloud Comput.", "IoT"],
   }
 ];
