@@ -16,12 +16,12 @@ import { CategoryComponent } from "./category/category.component";
   styleUrl: "./skills.component.css",
 })
 export class SkillsComponent implements OnChanges, OnInit {
-  @Input() windowWidth!: number;
+  @Input() widgetWidth!: number;
   @Input() categoryList!: Category[];
-  widgetWidth!: number;
+  //widgetWidth!: number;
   catMatrice!: Category[][];
   PADDING: number = 20;
-  MARGIN: number = 44;
+  //MARGIN: number = 44;
   minCatWidth: number = 288 + this.PADDING;
   maxCatWidth: number = 428 + this.PADDING;
   categoryWidth!: number;
@@ -30,18 +30,18 @@ export class SkillsComponent implements OnChanges, OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.widgetWidth = this.windowWidth - 2 * this.MARGIN;
+    console.log(this.widgetWidth);
     this.setCategoryWidth();
     this.createCategoriesMatrice();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.widgetWidth = this.windowWidth - 2 * this.MARGIN;
     var oldHorizontalCatNumber = this.horizontalCatNumber;
     this.setCategoryWidth();
     if (oldHorizontalCatNumber != this.horizontalCatNumber) {
       this.createCategoriesMatrice();
     }
+    console.log(this.widgetWidth);
   }
 
   setCategoryWidth() {
@@ -54,6 +54,7 @@ export class SkillsComponent implements OnChanges, OnInit {
       (this.widgetWidth - this.PADDING) / this.horizontalCatNumber -
         this.PADDING
     );
+    console.log(this.categoryWidth);
   }
 
   createCategoriesMatrice() {
@@ -82,6 +83,5 @@ export class SkillsComponent implements OnChanges, OnInit {
         }
       })
     );
-    console.log(this.catMatrice);
   }
 }
