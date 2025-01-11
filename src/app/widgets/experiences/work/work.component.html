@@ -29,26 +29,34 @@
   </div>
   }
   <!-- </div> -->
-  <div class="flex flex-row items-center">
+  <div class="flex flex-row items-end">
     <div class="flex basis-4/5 flex-wrap mt-2">
-      @for(skill of work.skillNames; track skill) {
+      <div class="flex flex-wrap">
+        @for(skill of expanded ? work.skillNames :
+        work.skillNames?.slice(0,2); track skill) {
+        <div
+          class="rounded-full bg-primaryColor py-1 px-3 mx-1 my-1 shadow-md h-fit font-bold text-white tablet:text-xl"
+        >
+          {{ skill }}
+        </div>
+        }
+      </div>
+      @if(work.skillNames!.length > 1 && !expanded) {
       <div
         class="rounded-full bg-primaryColor py-1 px-3 mx-1 my-1 shadow-md h-fit font-bold text-white text-xl"
       >
-        {{ skill }}
+        +{{ work.skillNames!.length - 2 }}
       </div>
       }
     </div>
-    <div
-      (click)="expand()"
-      class="basis-1/5 flex flex-row justify-end"
-    ><div class="w-10 h-10 hover:bg-blue-200 hover:rounded-full">
-      @if(!expanded) {
-      <img src="https://www.svgrepo.com/show/521469/arrow-down.svg" alt="" />
-      } @else {
-      <img src="https://www.svgrepo.com/show/521486/arrow-up.svg" alt="" />
-      }
-    </div>
+    <div (click)="expand()" class="basis-1/5 flex flex-row justify-end">
+      <div class="w-10 h-10 hover:bg-blue-200 hover:rounded-full">
+        @if(!expanded) {
+        <img src="https://www.svgrepo.com/show/521469/arrow-down.svg" alt="" />
+        } @else {
+        <img src="https://www.svgrepo.com/show/521486/arrow-up.svg" alt="" />
+        }
+      </div>
     </div>
   </div>
 </div>

@@ -30,7 +30,6 @@ export class SkillsComponent implements OnChanges, OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.widgetWidth);
     this.setCategoryWidth();
     this.createCategoriesMatrice();
   }
@@ -41,20 +40,17 @@ export class SkillsComponent implements OnChanges, OnInit {
     if (oldHorizontalCatNumber != this.horizontalCatNumber) {
       this.createCategoriesMatrice();
     }
-    console.log(this.widgetWidth);
   }
 
   setCategoryWidth() {
     this.horizontalCatNumber = Math.floor(
       (this.widgetWidth - this.PADDING) / this.minCatWidth
     );
-    console.log((this.widgetWidth - this.PADDING) / this.horizontalCatNumber);
     this.categoryWidth = Math.min(
       this.maxCatWidth,
       (this.widgetWidth - this.PADDING) / this.horizontalCatNumber -
         this.PADDING
     );
-    console.log(this.categoryWidth);
   }
 
   createCategoriesMatrice() {
