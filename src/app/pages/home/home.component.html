@@ -1,6 +1,8 @@
-<div class=" h-screen snap-mandatory overflow-scroll">
+<div class="h-screen snap-mandatory overflow-scroll">
   <div class="snap-start w-full laptop:h-[576px] smartphone:h-fit bg-blue-500">
-    <div class="flex laptop:flex-row smartphone:flex-col h-full items-center justify-between">
+    <div
+      class="flex laptop:flex-row smartphone:flex-col h-full items-center justify-between"
+    >
       <div
         [style.width.px]="isLaptop ? w_left_window - 150 : w_left_window"
         class="smartphone:px-10 tablet:px-16 py-8 font-bold laptop:text-7xl tablet:text-6xl smartphone:text-5xl smartphone:order-last laptop:order-first text-white"
@@ -9,7 +11,8 @@
         <div>Developer.</div>
         <div class="text-xl my-5 text-justify">
           I’m skilled in several programming languages and I have experience in
-          integrating engineering principles in software applications. Reach out if you want to get my Website Angular code ! 😜
+          integrating engineering principles in software applications. Reach out
+          if you want to get my Website Angular code ! 😜
         </div>
         <div class="flex">
           <div
@@ -38,7 +41,9 @@
         class="flex smartphone:h-[200px] smartphone:w-[200px] tablet:h-[300px] tablet:w-[300px] mt-16 border-2 border-blue-500 rounded-full bg-profile-pic bg-cover"
       ></div>
 
-      <div class="p-16 flex-grow h-full justify-between smartphone:hidden laptop:flex flex-row">
+      <div
+        class="p-16 flex-grow h-full justify-between smartphone:hidden laptop:flex flex-row"
+      >
         <div class="basis-1/4 flex flex-col items-center justify-start">
           <img class="w-20 h-20" src="icons/web-dev.svg" alt="" />
           <img class="mt-36 w-20 h-20" src="icons/drone.svg" alt="" />
@@ -63,7 +68,7 @@
       <!-- slider -->
       <div
         [style.left.px]="w_left_window - PADDING"
-        class="smartphone:hidden laptop:flex flex-col absolute  h-full pb-[250px] w-fit"
+        class="smartphone:hidden laptop:flex flex-col absolute h-full pb-[250px] w-fit"
       >
         <div class="w-10 h-16 bg-blue-300"></div>
         <div
@@ -94,15 +99,14 @@
           [style.width.px]="w_left_window"
           class="flex-col bg-white laptop:border-r laptop:border-b-2 border-blue-400"
         >
-
-        <!-- selection bar -->
+          <!-- selection bar -->
           <div
             class="smartphone:hidden laptop:flex justify-end pr-11 py-2 bg-blue-300 border-b-2 border-blue-400"
           >
             <div
               (click)="selectWidget('skills')"
               [style.opacity]="selectedWidgets.includes('skills') ? '1' : '0.5'"
-              class="cursor-pointer h-12 w-12 rounded-xl p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="cursor-pointer h-12 w-12 rounded-xl p-0.5 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
                 src="https://www.svgrepo.com/show/454121/education-learning-6.svg"
@@ -126,8 +130,59 @@
           @if(selectedWidgets.includes('skills')){
           <app-skills
             [categoryList]="categoryList"
-            [widgetWidth]="w_left_window - ((isLaptop || isTablet) ? 2*BIG_MARGIN : 2*SMALL_MARGIN)"
+            [widgetWidth]="
+              w_left_window -
+              (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+            "
           ></app-skills>
+          } @if(selectedWidgets.includes('education')){
+          <div
+            class="bg-blue-50 p-5 smartphone:m-5 tablet:m-11 rounded-lg border-2 border-blue-200 shadow-lg"
+          >
+            <div class="flex flex-row items-center">
+              <div
+                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+              >
+                Education
+              </div>
+            </div>
+            <div class="flex-auto w-full pt-5">
+              <div class="overflow-y-scroll h-fit">
+                <div
+                  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2 border-blue-200"
+                >
+                  <div class="flex w-full items-center">
+                    <div class="basis-1/5 mr-5 flex justify-center">
+                      <img class="w-full max-w-44" src="ethz_logo.png" alt="" />
+                    </div>
+                    <div class="basis-4/5">
+                      <p class="text-2xl">
+                        <span class="font-bold">MSc </span>
+                        <span>in Mechanical Engineering&nbsp;</span>
+                        <span class="font-bold">&#64;ETHZ</span>
+                        <span>, Zurich</span>
+                      </p>
+                      <div class="mt-2 w-fit">Sep. 2021 - June 2024</div>
+                    </div>
+                  </div>
+                  <div class="flex mt-8 w-full items-center">
+                    <div class="basis-1/5 w-full mr-5 flex justify-center">
+                      <img class="w-full max-w-44" src="logo-epfl.png" alt="" />
+                    </div>
+                    <div class="basis-4/5">
+                      <p class="text-2xl">
+                        <span class="font-bold">BSc </span>
+                        <span>in Micro-engineering&nbsp;</span>
+                        <span class="font-bold">&#64;EPFL</span>
+                        <span>, Lausanne</span>
+                      </p>
+                      <div class="mt-2 w-fit">Sep. 2018 - June 2021</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           }
         </div>
         <!-- right window -->
@@ -135,7 +190,7 @@
           [style.width.px]="w_right_window"
           class="flex-col bg-white laptop:border-l laptop:border-b-2 border-blue-400"
         >
-        <!-- selection bar -->
+          <!-- selection bar -->
           <div
             class="smartphone:hidden laptop:flex justify-start pl-11 py-2 bg-blue-300 border-b-2 border-blue-400"
           >
@@ -168,7 +223,9 @@
             class="bg-blue-50 p-5 smartphone:mx-5 tablet:mx-11 laptop:my-11 smartphone:my-0 rounded-lg border-2 border-blue-200 shadow-lg"
           >
             <div class="flex flex-row items-center">
-              <div class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6">
+              <div
+                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+              >
                 Experience
               </div>
             </div>
@@ -189,13 +246,23 @@
             class="bg-blue-50 p-5 smartphone:m-5 tablet:m-11 rounded-lg border-2 border-blue-200 shadow-lg"
           >
             <div class="flex flex-row items-center">
-              <div class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6">Projects</div>
+              <div
+                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+              >
+                Projects
+              </div>
             </div>
             <div class="flex-auto w-full">
               <div class="overflow-y-scroll h-fit">
                 @for(project of projectList; track project) {
                 <div class="pt-5">
-                  <app-project [project]="project"></app-project>
+                  <app-project
+                    [project]="project"
+                    [widgetWidth]="
+                      w_right_window -
+                      (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+                    "
+                  ></app-project>
                 </div>
                 }
               </div>
@@ -207,18 +274,55 @@
     </div>
   </div>
   <div class="snap-start">
-    <div class="w-full h-fit flex flex-col bg-blue-500">
-      <div class="flex justify-center items-center smartphone:px-10 tablet:px-16 h-32 w-full text-white smartphone:text-5xl tablet:text-6xl font-bold bg-blue-500">
+    <div class="w-full h-fit flex flex-col mb-12">
+      <div
+        class="flex justify-center items-center smartphone:px-10 tablet:px-16 h-56 w-full text-primaryColor smartphone:text-5xl tablet:text-6xl font-bold"
+      >
         Drone Shots
       </div>
-      <video
-        class="w-full h-fit max-h-screen object-cover"
-        src="drone.mov"
-        type="video/mov"
-        [autoplay]="false"
-        [muted]="true"
-        loop
-      ></video>
+      <div
+        class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center pl-12 smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0"
+      >
+        <div class="basis-3/4 w-full">
+          <video
+            poster="thumbnail-sydney.JPG"
+            controls
+            class="rounded-xl w-full h-fit max-h-screen object-cover"
+            src="drone.mov"
+            type="video/mov"
+            [autoplay]="false"
+            [muted]="true"
+            loop
+          ></video>
+        </div>
+        <div
+          class="px-5 pb-8 basis-1/4 flex justify-center items-center text-primaryColor text-3xl"
+        >
+          <img class="w-12 h-12" src="icons/position-blue.svg" alt="" />
+          <div>Sydney</div>
+        </div>
+      </div>
+      <div
+        class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0 mt-12"
+      >
+        <div class="basis-3/4">
+          <video
+            controls
+            class="rounded-xl h-fit max-h-screen object-cover"
+            src="Western Australia by drone.mp4"
+            type="video/mp4"
+            [autoplay]="false"
+            [muted]="true"
+            loop
+          ></video>
+        </div>
+        <div
+          class="px-5 py-8 basis-1/4 flex justify-center items-center text-center text-primaryColor text-3xl"
+        >
+          <img class="w-12 h-12" src="icons/position-blue.svg" alt="" />
+          <div class="w-fit">Western Australia</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

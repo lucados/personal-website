@@ -69,12 +69,12 @@ export const projects: Project[] = [
           "Development and deployment of an IoT application on different OS (iOS, Android, MacOS, Windows, Linux) using Flutter SDK, Python and C++. The app can be installed on smartphones, computers and embedded systems (e.g. Raspberry Pi) to monitor sensors, process data and communicate them to the Cloud. Different use cases are conducted to test the performance of the app.",
         img: "edge_app_intro.png",
       },
-      {
-        title: "Results",
-        content: "There were good results !",
-      },
+      // {
+      //   title: "Results",
+      //   content: "There were good results !",
+      // },
     ],
-    skillNames: ["Python", "Flutter", "C++", "MQTT", "Docker", "GCP", "Edge/Cloud Comput.", "IoT"],
+    skillNames: ["Python", "Flutter", "C++", "MQTT", "Docker", "GCP", "Data monitoring", "Edge/Cloud Comput.", "IoT"],
   },
   {
     title: "Dynamic PV's solar power forecasting",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     skillNames: ["Python", "TensorFlow", "TFLite", "Machine Learning", "GCP", "Edge/Cloud Comput.", "IoT"],
   },
   {
-    title: "Train comfort analysis ",
+    title: "Train comfort analysis",
     date: "May 2024 - June 2024",
     location: "Zurich",
     institution: "ETHZ",
@@ -101,5 +101,18 @@ export const projects: Project[] = [
       }
     ],
     skillNames: ["Python", "GCP", "Edge/Cloud Comput.", "IoT"],
+  },
+  {
+    title: "CLAID Application",
+    date: "Sept 2022 - Jan 2023",
+    location: "Zurich",
+    institution: "ETHZ",
+    sections: [
+      {
+        content: "I contributed to the development of CLAIDapp, a server-less application in the health industry. My role involved integrating front-end elements using Flutter and back-end elements in C and C++. This collaborative effort resulted in a robust and efficient application tailored to the specific needs of the healthcare sector.",
+        img: "CLAIDapp.png"
+      }
+    ],
+    skillNames: ["C++", "C", "Flutter", "Data monitoring"],
   }
 ];

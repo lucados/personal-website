@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input} from "@angular/core";
 import { Project } from "../../../interfaces/experience";
 import { animate, style, transition, trigger } from "@angular/animations";
 
@@ -23,6 +23,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
 })
 export class ProjectComponent {
   @Input() project!: Project;
+  @Input() widgetWidth!: number;
   expanded: boolean = false;
 
   expand() {

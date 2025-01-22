@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   isLaptop!: boolean;
   isTablet!: boolean;
-  w_left_window!: number; 
+  w_left_window!: number;
   w_right_window!: number;
 
   grabber: boolean = false;
@@ -33,14 +33,13 @@ export class HomeComponent implements OnInit {
   BIG_MARGIN: number = 44;
   SMALL_MARGIN: number = 20;
 
-  selectedWidgets: string[] = ['skills', 'works', 'projects'];
+  selectedWidgets: string[] = ["skills", "works", "projects", "education"];
 
   selectWidget(widgetTitle: string) {
-    if(this.selectedWidgets.includes(widgetTitle)) {
+    if (this.selectedWidgets.includes(widgetTitle)) {
       var index = this.selectedWidgets.indexOf(widgetTitle);
       this.selectedWidgets.splice(index, 1);
-    }
-    else {
+    } else {
       this.selectedWidgets.push(widgetTitle);
     }
   }
@@ -66,8 +65,13 @@ export class HomeComponent implements OnInit {
       this.w_right_window >= 576
     ) {
       var delta = event.clientX - this.w_left_window;
-      this.w_left_window += delta;
-      this.w_right_window -= delta;
+      if (
+        this.w_left_window + delta >= 576 &&
+        this.w_right_window - delta >= 576
+      ) {
+        this.w_left_window += delta;
+        this.w_right_window -= delta;
+      }
     } else {
       this.grabber = false;
       if (this.w_left_window < 576 && this.isLaptop) {
@@ -83,38 +87,39 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(window.innerWidth >= 1200) {
+    if (window.innerWidth >= 1200) {
       this.isLaptop = true;
       this.isTablet = false;
       this.w_left_window = (1 / 2) * window.innerWidth;
       this.w_right_window = (1 / 2) * window.innerWidth;
-    }
-    else {
+    } else {
       this.isLaptop = false;
       this.w_left_window = window.innerWidth;
       this.w_right_window = window.innerWidth;
-      window.innerWidth >= 576 ? this.isTablet = true : this.isTablet = false;
+      window.innerWidth >= 576
+        ? (this.isTablet = true)
+        : (this.isTablet = false);
     }
   }
 
   @HostListener("window:resize", ["$event"])
   onResize() {
     // if computer size
-    if(window.innerWidth >= 1200) {
+    if (window.innerWidth >= 1200) {
       this.isLaptop = true;
       this.isTablet = false;
       this.w_left_window = (1 / 2) * window.innerWidth;
       this.w_right_window = (1 / 2) * window.innerWidth;
-    }
-    else {
+    } else {
       this.isLaptop = false;
       this.w_left_window = window.innerWidth;
       this.w_right_window = window.innerWidth;
-      window.innerWidth >= 576 ? this.isTablet = true : this.isTablet = false;
+      window.innerWidth >= 576
+        ? (this.isTablet = true)
+        : (this.isTablet = false);
     }
   }
 
   @ViewChild("categoryWidget", { static: false })
   categoryWidget!: ElementRef<HTMLInputElement>;
-
 }
