@@ -22,8 +22,8 @@ export class SkillsComponent implements OnChanges, OnInit {
   catMatrice!: Category[][];
   PADDING: number = 20;
   //MARGIN: number = 44;
-  minCatWidth: number = 288 + this.PADDING;
-  maxCatWidth: number = 428 + this.PADDING;
+  minCatWidth: number = 230 + this.PADDING;
+  maxCatWidth: number = 378 + this.PADDING;
   categoryWidth!: number;
   horizontalCatNumber!: number;
 

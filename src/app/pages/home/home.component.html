@@ -1,22 +1,22 @@
 <div class="h-screen snap-mandatory overflow-scroll">
-  <div class="snap-start w-full laptop:h-[576px] smartphone:h-fit bg-blue-500">
+  <div class="snap-start w-full laptop:h-[446px] smartphone:h-fit bg-blue-500">
     <div
       class="flex laptop:flex-row smartphone:flex-col h-full items-center justify-between"
     >
       <div
-        [style.width.px]="isLaptop ? w_left_window - 150 : w_left_window"
-        class="smartphone:px-10 tablet:px-16 py-8 font-bold laptop:text-7xl tablet:text-6xl smartphone:text-5xl smartphone:order-last laptop:order-first text-white"
+        [style.width.px]="isLaptop ? w_left_window - 124 : w_left_window"
+        class="smartphone:px-6 tablet:px-12 py-8 font-bold laptop:text-5xl tablet:text-5xl smartphone:text-4xl smartphone:order-last laptop:order-first text-white"
       >
         <div>Full-stack</div>
         <div>Developer.</div>
-        <div class="text-xl my-5 text-justify">
+        <div class="tablet:text-lg smartphone:text-sm my-5 text-justify">
           I’m skilled in several programming languages and I have experience in
           integrating engineering principles in software applications. Reach out
           if you want to get my Website Angular code ! 😜
         </div>
         <div class="flex">
           <div
-            class="cursor-pointer h-12 w-12 rounded-xl p-1 border-2 border-blue-400 bg-white"
+            class="cursor-pointer h-10 w-10 rounded-xl p-1 border-2 border-blue-400 bg-white"
           >
             <a href="https://www.linkedin.com/in/luca-dos-santos-452431263/">
               <img
@@ -26,7 +26,7 @@
             </a>
           </div>
           <div
-            class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white"
+            class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white"
           >
             <a href="https://github.com/lucados">
               <img
@@ -38,25 +38,25 @@
         </div>
       </div>
       <div
-        class="flex smartphone:h-[200px] smartphone:w-[200px] tablet:h-[300px] tablet:w-[300px] mt-16 border-2 border-blue-500 rounded-full bg-profile-pic bg-cover"
+        class="flex smartphone:h-[200px] smartphone:w-[200px] tablet:h-[240px] tablet:w-[240px] mt-16 border-2 border-blue-500 rounded-full bg-profile-pic bg-cover"
       ></div>
 
       <div
         class="p-16 flex-grow h-full justify-between smartphone:hidden laptop:flex flex-row"
       >
         <div class="basis-1/4 flex flex-col items-center justify-start">
-          <img class="w-20 h-20" src="icons/web-dev.svg" alt="" />
-          <img class="mt-36 w-20 h-20" src="icons/drone.svg" alt="" />
+          <img class="w-12 h-12" src="icons/web-dev.svg" alt="" />
+          <img class="mt-36 w-12 h-12" src="icons/drone.svg" alt="" />
         </div>
         <div class="basis-1/4 flex flex-col items-center justify-end">
-          <img class="w-20 h-20" src="icons/cloud-dev.svg" alt="" />
+          <img class="w-12 h-12" src="icons/cloud-dev.svg" alt="" />
         </div>
         <div class="basis-1/4 flex flex-col items-center justify-center">
-          <img class="w-20 h-20" src="icons/robot-dev.svg" alt="" />
+          <img class="w-12 h-12" src="icons/robot-dev.svg" alt="" />
         </div>
         <div class="basis-1/4 flex flex-col items-center justify-between">
-          <img class="w-20 h-20" src="icons/embedded-dev.svg" alt="" />
-          <img class="w-20 h-20" src="icons/mobile-dev-1.svg" alt="" />
+          <img class="w-12 h-12" src="icons/embedded-dev.svg" alt="" />
+          <img class="w-12 h-12" src="icons/mobile-dev-1.svg" alt="" />
         </div>
       </div>
     </div>
@@ -70,24 +70,24 @@
         [style.left.px]="w_left_window - PADDING"
         class="smartphone:hidden laptop:flex flex-col absolute h-full pb-[250px] w-fit"
       >
-        <div class="w-10 h-16 bg-blue-300"></div>
+        <div class="w-6 h-14 bg-blue-300"></div>
         <div
           [style.left.px]="w_left_window - PADDING"
-          class="sticky top-0 w-10 h-24"
+          class="sticky top-0 w-6 h-20"
         >
           <div class="w-full h-full p-1">
             <div
               (mousedown)="onMouseDown($event)"
-              class="cursor-pointer mt-[108px] border-2 border-blue-400 shadow-lg h-full w-full flex flex-col items-center justify-center rounded-lg bg-blue-300"
+              class="cursor-pointer mt-[48px] border-2 border-blue-400 shadow-lg h-full w-full flex flex-col items-center justify-center rounded-md bg-blue-300"
             >
               <div
-                class="w-3 my-1 h-3 bg-white border-2 border-blue-400 rounded-full"
+                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
               ></div>
               <div
-                class="w-3 my-1 h-3 bg-white border-2 border-blue-400 rounded-full"
+                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
               ></div>
               <div
-                class="w-3 my-1 h-3 bg-white border-2 border-blue-400 rounded-full"
+                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
               ></div>
             </div>
           </div>
@@ -106,7 +106,7 @@
             <div
               (click)="selectWidget('skills')"
               [style.opacity]="selectedWidgets.includes('skills') ? '1' : '0.5'"
-              class="cursor-pointer h-12 w-12 rounded-xl p-0.5 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="cursor-pointer h-10 w-10 rounded-xl p-0.5 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
                 src="https://www.svgrepo.com/show/454121/education-learning-6.svg"
@@ -118,7 +118,7 @@
               [style.opacity]="
                 selectedWidgets.includes('education') ? '1' : '0.5'
               "
-              class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
                 src="https://www.svgrepo.com/show/450824/education.svg"
@@ -137,32 +137,32 @@
           ></app-skills>
           } @if(selectedWidgets.includes('education')){
           <div
-            class="bg-blue-50 p-5 smartphone:m-5 tablet:m-11 rounded-lg border-2 border-blue-200 shadow-lg"
+            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
           >
             <div class="flex flex-row items-center">
               <div
-                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
               >
                 Education
               </div>
             </div>
-            <div class="flex-auto w-full pt-5">
+            <div class="flex-auto w-full smartphone:pt-3 tablet:pt-5">
               <div class="overflow-y-scroll h-fit">
                 <div
-                  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-6 text-xl font-mono rounded-lg bg-white border-2 border-blue-200"
+                  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-4 tablet:text-[16px] smartphone:text-sm font-mono rounded-lg bg-white border-2 border-blue-200"
                 >
                   <div class="flex w-full items-center">
                     <div class="basis-1/5 mr-5 flex justify-center">
                       <img class="w-full max-w-44" src="ethz_logo.png" alt="" />
                     </div>
                     <div class="basis-4/5">
-                      <p class="text-2xl">
+                      <p>
                         <span class="font-bold">MSc </span>
                         <span>in Mechanical Engineering&nbsp;</span>
                         <span class="font-bold">&#64;ETHZ</span>
                         <span>, Zurich</span>
                       </p>
-                      <div class="mt-2 w-fit">Sep. 2021 - June 2024</div>
+                      <div class="mt-1 w-fit">Sep. 2021 - June 2024</div>
                     </div>
                   </div>
                   <div class="flex mt-8 w-full items-center">
@@ -170,13 +170,13 @@
                       <img class="w-full max-w-44" src="logo-epfl.png" alt="" />
                     </div>
                     <div class="basis-4/5">
-                      <p class="text-2xl">
+                      <p>
                         <span class="font-bold">BSc </span>
                         <span>in Micro-engineering&nbsp;</span>
                         <span class="font-bold">&#64;EPFL</span>
                         <span>, Lausanne</span>
                       </p>
-                      <div class="mt-2 w-fit">Sep. 2018 - June 2021</div>
+                      <div class="mt-1 w-fit">Sep. 2018 - June 2021</div>
                     </div>
                   </div>
                 </div>
@@ -197,7 +197,7 @@
             <div
               (click)="selectWidget('works')"
               [style.opacity]="selectedWidgets.includes('works') ? '1' : '0.5'"
-              class="cursor-pointer h-12 w-12 rounded-xl p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="cursor-pointer h-10 w-10 rounded-xl p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
                 src="https://www.svgrepo.com/show/412382/experience.svg"
@@ -209,7 +209,7 @@
               [style.opacity]="
                 selectedWidgets.includes('projects') ? '1' : '0.5'
               "
-              class="cursor-pointer h-12 w-12 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
             >
               <img
                 src="https://www.svgrepo.com/show/450795/deep-learning-project.svg"
@@ -220,11 +220,11 @@
           <!-- Work Experience -->
           @if(selectedWidgets.includes('works')){
           <div
-            class="bg-blue-50 p-5 smartphone:mx-5 tablet:mx-11 laptop:my-11 smartphone:my-0 rounded-lg border-2 border-blue-200 shadow-lg"
+            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:mx-3 tablet:mx-6 laptop:my-6 smartphone:my-0 rounded-lg border-2 border-blue-200 shadow-lg"
           >
             <div class="flex flex-row items-center">
               <div
-                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
               >
                 Experience
               </div>
@@ -232,7 +232,7 @@
             <div class="flex-auto w-full">
               <div class="overflow-y-scroll h-fit">
                 @for(work of workList; track work) {
-                <div class="pt-5">
+                <div class="smartphone:pt-3 tablet:pt-5">
                   <app-work [work]="work"></app-work>
                 </div>
                 }
@@ -243,11 +243,11 @@
           <!-- Projects -->
           @if(selectedWidgets.includes('projects')){
           <div
-            class="bg-blue-50 p-5 smartphone:m-5 tablet:m-11 rounded-lg border-2 border-blue-200 shadow-lg"
+            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
           >
             <div class="flex flex-row items-center">
               <div
-                class="tablet:text-6xl smartphone:text-5xl font-bold text-blue-400 mr-6"
+                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
               >
                 Projects
               </div>
@@ -255,7 +255,7 @@
             <div class="flex-auto w-full">
               <div class="overflow-y-scroll h-fit">
                 @for(project of projectList; track project) {
-                <div class="pt-5">
+                <div class="smartphone:pt-3 tablet:pt-5">
                   <app-project
                     [project]="project"
                     [widgetWidth]="
@@ -276,7 +276,7 @@
   <div class="snap-start">
     <div class="w-full h-fit flex flex-col mb-12">
       <div
-        class="flex justify-center items-center smartphone:px-10 tablet:px-16 h-56 w-full text-primaryColor smartphone:text-5xl tablet:text-6xl font-bold"
+        class="flex justify-center items-center smartphone:px-10 tablet:px-16 h-40 w-full text-primaryColor text-4xl font-bold"
       >
         Drone Shots
       </div>
@@ -296,9 +296,9 @@
           ></video>
         </div>
         <div
-          class="px-5 pb-8 basis-1/4 flex justify-center items-center text-primaryColor text-3xl"
+          class="px-5 pb-8 basis-1/4 flex justify-center items-center text-primaryColor text-xl"
         >
-          <img class="w-12 h-12" src="icons/position-blue.svg" alt="" />
+          <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
           <div>Sydney</div>
         </div>
       </div>
@@ -308,7 +308,7 @@
         <div class="basis-3/4">
           <video
             controls
-            class="rounded-xl h-fit max-h-screen object-cover"
+            class="rounded-xl w-full h-fit max-h-screen object-cover"
             src="Western Australia by drone.mp4"
             type="video/mp4"
             [autoplay]="false"
@@ -317,9 +317,9 @@
           ></video>
         </div>
         <div
-          class="px-5 py-8 basis-1/4 flex justify-center items-center text-center text-primaryColor text-3xl"
+          class="px-5 py-8 basis-1/4 flex justify-center items-center text-center text-primaryColor text-xl"
         >
-          <img class="w-12 h-12" src="icons/position-blue.svg" alt="" />
+          <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
           <div class="w-fit">Western Australia</div>
         </div>
       </div>

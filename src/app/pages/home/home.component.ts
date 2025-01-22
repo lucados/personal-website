@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
   w_right_window!: number;
 
   grabber: boolean = false;
-  PADDING: number = 20;
-  BIG_MARGIN: number = 44;
-  SMALL_MARGIN: number = 20;
+  PADDING: number = 12;
+  BIG_MARGIN: number = 24;
+  SMALL_MARGIN: number = 12;
 
   selectedWidgets: string[] = ["skills", "works", "projects", "education"];
 
@@ -61,23 +61,23 @@ export class HomeComponent implements OnInit {
     event.preventDefault();
     if (
       this.grabber &&
-      this.w_left_window >= 576 &&
-      this.w_right_window >= 576
+      this.w_left_window >= 440 &&
+      this.w_right_window >= 440
     ) {
       var delta = event.clientX - this.w_left_window;
       if (
-        this.w_left_window + delta >= 576 &&
-        this.w_right_window - delta >= 576
+        this.w_left_window + delta >= 440 &&
+        this.w_right_window - delta >= 440
       ) {
         this.w_left_window += delta;
         this.w_right_window -= delta;
       }
     } else {
       this.grabber = false;
-      if (this.w_left_window < 576 && this.isLaptop) {
-        this.w_left_window = 576;
-      } else if (this.w_right_window < 576 && this.isLaptop) {
-        this.w_right_window = 576;
+      if (this.w_left_window < 440 && this.isLaptop) {
+        this.w_left_window = 440;
+      } else if (this.w_right_window < 440 && this.isLaptop) {
+        this.w_right_window = 440;
       }
     }
   }
@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (window.innerWidth >= 1200) {
+    if (window.innerWidth >= 960) {
       this.isLaptop = true;
       this.isTablet = false;
       this.w_left_window = (1 / 2) * window.innerWidth;
@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit {
   @HostListener("window:resize", ["$event"])
   onResize() {
     // if computer size
-    if (window.innerWidth >= 1200) {
+    if (window.innerWidth >= 960) {
       this.isLaptop = true;
       this.isTablet = false;
       this.w_left_window = (1 / 2) * window.innerWidth;
