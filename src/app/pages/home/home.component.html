@@ -1,5 +1,6 @@
-<div class="h-screen snap-mandatory overflow-scroll">
-  <div class="snap-start w-full laptop:h-[446px] smartphone:h-fit bg-blue-500">
+<div class="h-screen overflow-scroll">
+  <!-- Presentation -->
+  <div class="w-full laptop:h-[446px] smartphone:h-fit bg-blue-500">
     <div
       class="flex laptop:flex-row smartphone:flex-col h-full items-center justify-between"
     >
@@ -10,9 +11,9 @@
         <div>Full-stack</div>
         <div>Developer.</div>
         <div class="tablet:text-lg smartphone:text-sm my-5 text-justify">
-          I’m skilled in several programming languages and I have experience in
-          integrating engineering principles in software applications. Reach out
-          if you want to get my Website Angular code ! 😜
+          I’m an expert in different programming languages and I have experience
+          in integrating engineering principles in software applications. Reach
+          out if you want to get my Website Angular code ! 😜
         </div>
         <div class="flex">
           <div
@@ -63,311 +64,365 @@
   </div>
 
   <!-- Angular module library -->
-  <div class="snap-start">
-    <div class="w-full h-fit flex flex-col mb-8 p-5 laptop:p-12">
+  <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
+    <div
+      class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+    >
+      Ngx-modular-dash
+    </div>
+    <div
+      class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
+    >
       <div
-        class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+        class="laptop:basis-1/2 smartphone:px-6 tablet:px-12 laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-6 laptop:mb-0 flex flex-col"
       >
-        Ngx-modular-dash
-      </div>
-      <div
-        class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
-      >
+        <p>
+          An elegant Dashboard component for Angular that can display 3 widgets
+          at the same time on computers and 2 on smartphones using modular
+          windows. You can include up to 8 custom widgets using multi-slot
+          content projection. Different parameters can be set as input to
+          customize your Dashboard (color theme, separations, margins...). You
+          can directly install it as an NPM package for your next Angular
+          project!
+        </p>
         <div
-          class="laptop:basis-1/2 laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-3 laptop:mb-0"
+          class="w-fit flex justify-center mt-8 my-3 mx-auto py-2 px-4 bg-blue-500 shadow-lg rounded-lg text-white"
         >
-          <p>
-            An elegant Dashboard component for Angular that can display 3
-            widgets at the same time on computers and 2 on smartphones using
-            modular windows. You can include up to 8 custom widgets using
-            multi-slot content projection. Different parameters can be set as
-            input to customize your Dashboard (color theme, separations,
-            margins...).
-          </p>
+          <a href="https://www.npmjs.com/package/ngx-modular-dash"
+            >www.npmjs.com/package/ngx-modular-dash</a
+          >
         </div>
-        <div class="laptop:basis-1/2 laptop:pl-3 relative">
-          <video
-            class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
-            src="demo-ngx-modular-dash.mov"
-            type="video/mov"
-            [autoplay]="true"
-            [muted]="true"
-            loop
-          ></video>
-          <div class="w-full h-3 absolute bottom-[0px] bg-white"></div>
+      </div>
+      <div class="laptop:basis-1/2 laptop:pl-3 relative">
+        <video
+          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
+          src="demo-ngx-modular-dash.mp4"
+          type="video/mp4"
+          [autoplay]="true"
+          [muted]="true"
+          loop
+        ></video>
+        <div class="w-full h-3 absolute bottom-[0px] bg-white"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Homestays.ch -->
+  <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
+    <div
+      class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+    >
+      Homestays.ch
+    </div>
+    <div
+      class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
+    >
+      <div
+        class="laptop:basis-1/2 smartphone:px-6 tablet:px-12 laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-6 laptop:mb-0 flex flex-col"
+      >
+        <p>
+          We offer a platform designed to help those looking for supplementary income by connecting them with the perfect roommate—an international student. By sharing part of your home, you can earn a steady income while also creating a meaningful cultural exchange.
+        </p>
+        <div
+          class="w-fit flex justify-center mt-8 my-3 mx-auto py-2 px-4 bg-blue-500 shadow-lg rounded-lg text-white"
+        >
+          <a href="https://homestays.ch">Homestays.ch</a>
         </div>
+      </div>
+      <div class="laptop:basis-1/2 laptop:pl-3 relative">
+        <img
+          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
+          src="homestays.png"
+          alt=""
+        />
+        <div class="w-full h-3 absolute bottom-[0px] bg-white"></div>
       </div>
     </div>
   </div>
 
   <!-- Resume page -->
-  <div class="snap-start">
-    <div class="w-full h-fit relative">
-      <div
-        class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
-      >
-        Digital Resume
-      </div>
-      <!-- slider -->
-      @if(selectedWidgets.length > 0) {
+  <!-- <div
+    class="border shadow-lg rounded-lg pt-3 m-5 laptop:mx-12 h-fit relative overflow-y-clip"
+  >
+    <lib-ngx-modular-dash
+      [widgetIcons]="[
+        'https://www.svgrepo.com/show/454121/education-learning-6.svg',
+        'https://www.svgrepo.com/show/450824/education.svg'
+      ]"
+    >
+      <app-skills
+        id="0"
+        [categoryList]="categoryList"
+        [widgetWidth]="
+          w_left_window -
+          (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+        "
+      ></app-skills>
+    </lib-ngx-modular-dash>
+  </div> -->
+
+  <div class="w-full h-fit relative mt-16">
+    <div
+      class="flex justify-center mb-6 items-center h-40 w-full text-primaryColor text-4xl font-bold"
+    >
+      Digital Resume
+    </div>
+    <!-- slider -->
+    @if(selectedWidgets.length > 0) {
+    <div
+      [style.left.px]="w_left_window - PADDING"
+      class="smartphone:hidden laptop:flex flex-col absolute h-full pb-[250px] w-fit"
+    >
+      <div class="w-6 h-14 bg-blue-500"></div>
       <div
         [style.left.px]="w_left_window - PADDING"
-        class="smartphone:hidden laptop:flex flex-col absolute h-full pb-[250px] w-fit"
+        class="sticky top-0 w-6 h-20"
       >
-        <div class="w-6 h-14 bg-blue-300"></div>
-        <div
-          [style.left.px]="w_left_window - PADDING"
-          class="sticky top-0 w-6 h-20"
-        >
-          <div class="w-full h-full p-1">
+        <div class="w-full h-full p-1">
+          <div
+            (mousedown)="onMouseDown($event)"
+            class="cursor-pointer mt-[48px] border-2 border-blue-400 shadow-lg h-full w-full flex flex-col items-center justify-center rounded-md bg-blue-300"
+          >
             <div
-              (mousedown)="onMouseDown($event)"
-              class="cursor-pointer mt-[48px] border-2 border-blue-400 shadow-lg h-full w-full flex flex-col items-center justify-center rounded-md bg-blue-300"
-            >
-              <div
-                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
-              ></div>
-              <div
-                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
-              ></div>
-              <div
-                class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
-              ></div>
-            </div>
+              class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
+            ></div>
+            <div
+              class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
+            ></div>
+            <div
+              class="w-2 my-1 h-2 bg-white border-2 border-blue-400 rounded-full"
+            ></div>
           </div>
         </div>
       </div>
-      }
-      <div class="flex-grow flex smartphone:flex-col laptop:flex-row w-full">
-        <!-- left window -->
+    </div>
+    }
+    <div class="flex-grow flex smartphone:flex-col laptop:flex-row w-full">
+      <!-- left window -->
+      <div
+        [style.width.px]="w_left_window"
+        class="flex-col bg-white laptop:border-r laptop:border-b-2 border-blue-400"
+      >
+        <!-- selection bar -->
         <div
-          [style.width.px]="w_left_window"
-          class="flex-col bg-white laptop:border-r laptop:border-b-2 border-blue-400"
+          class="smartphone:hidden laptop:flex justify-end pr-11 py-2 bg-blue-500 border-b-2 border-blue-400"
         >
-          <!-- selection bar -->
           <div
-            class="smartphone:hidden laptop:flex justify-end pr-11 py-2 bg-blue-300 border-b-2 border-blue-400"
+            (click)="selectWidget('skills')"
+            [style.opacity]="selectedWidgets.includes('skills') ? '1' : '0.5'"
+            class="cursor-pointer h-10 w-10 rounded-xl p-0.5 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
           >
-            <div
-              (click)="selectWidget('skills')"
-              [style.opacity]="selectedWidgets.includes('skills') ? '1' : '0.5'"
-              class="cursor-pointer h-10 w-10 rounded-xl p-0.5 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
-            >
-              <img
-                src="https://www.svgrepo.com/show/454121/education-learning-6.svg"
-                alt=""
-              />
-            </div>
-            <div
-              (click)="selectWidget('education')"
-              [style.opacity]="
-                selectedWidgets.includes('education') ? '1' : '0.5'
-              "
-              class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
-            >
-              <img
-                src="https://www.svgrepo.com/show/450824/education.svg"
-                alt=""
-              />
-            </div>
+            <img
+              src="https://www.svgrepo.com/show/454121/education-learning-6.svg"
+              alt=""
+            />
           </div>
-          <!-- Skills -->
-          @if(selectedWidgets.includes('skills')){
-          <app-skills
-            [categoryList]="categoryList"
-            [widgetWidth]="
-              w_left_window -
-              (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+          <div
+            (click)="selectWidget('education')"
+            [style.opacity]="
+              selectedWidgets.includes('education') ? '1' : '0.5'
             "
-          ></app-skills>
-          } @if(selectedWidgets.includes('education')){
-          <div
-            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
+            class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-1 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
           >
-            <div class="flex flex-row items-center">
-              <div
-                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
-              >
-                Education
-              </div>
-            </div>
-            <div class="flex-auto w-full smartphone:pt-3 tablet:pt-5">
-              <div class="overflow-y-scroll h-fit">
-                <div
-                  class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-4 tablet:text-[16px] smartphone:text-sm font-mono rounded-lg bg-white border-2 border-blue-200"
-                >
-                  <div class="flex w-full items-center">
-                    <div class="basis-1/5 mr-5 flex justify-center">
-                      <img class="w-full max-w-44" src="ethz_logo.png" alt="" />
-                    </div>
-                    <div class="basis-4/5">
-                      <p>
-                        <span class="font-bold">MSc </span>
-                        <span>in Mechanical Engineering&nbsp;</span>
-                        <span class="font-bold">&#64;ETHZ</span>
-                        <span>, Zurich</span>
-                      </p>
-                      <div class="mt-1 w-fit">Sep. 2021 - June 2024</div>
-                    </div>
-                  </div>
-                  <div class="flex mt-8 w-full items-center">
-                    <div class="basis-1/5 w-full mr-5 flex justify-center">
-                      <img class="w-full max-w-44" src="logo-epfl.png" alt="" />
-                    </div>
-                    <div class="basis-4/5">
-                      <p>
-                        <span class="font-bold">BSc </span>
-                        <span>in Micro-engineering&nbsp;</span>
-                        <span class="font-bold">&#64;EPFL</span>
-                        <span>, Lausanne</span>
-                      </p>
-                      <div class="mt-1 w-fit">Sep. 2018 - June 2021</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img
+              src="https://www.svgrepo.com/show/450824/education.svg"
+              alt=""
+            />
           </div>
-          }
         </div>
-        <!-- right window -->
+        <!-- Skills -->
+        @if(selectedWidgets.includes('skills')){
+        <app-skills
+          [categoryList]="categoryList"
+          [widgetWidth]="
+            w_left_window -
+            (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+          "
+        ></app-skills>
+        } @if(selectedWidgets.includes('education')){
         <div
-          [style.width.px]="w_right_window"
-          class="flex-col bg-white laptop:border-l laptop:border-b-2 border-blue-400"
+          class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
         >
-          <!-- selection bar -->
-          <div
-            class="smartphone:hidden laptop:flex justify-start pl-11 py-2 bg-blue-300 border-b-2 border-blue-400"
-          >
+          <div class="flex flex-row items-center">
             <div
-              (click)="selectWidget('works')"
-              [style.opacity]="selectedWidgets.includes('works') ? '1' : '0.5'"
-              class="cursor-pointer h-10 w-10 rounded-xl p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+              class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
             >
-              <img
-                src="https://www.svgrepo.com/show/412382/experience.svg"
-                alt=""
-              />
-            </div>
-            <div
-              (click)="selectWidget('projects')"
-              [style.opacity]="
-                selectedWidgets.includes('projects') ? '1' : '0.5'
-              "
-              class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
-            >
-              <img
-                src="https://www.svgrepo.com/show/450795/deep-learning-project.svg"
-                alt=""
-              />
+              Education
             </div>
           </div>
-          <!-- Work Experience -->
-          @if(selectedWidgets.includes('works')){
-          <div
-            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:mx-3 tablet:mx-6 laptop:my-6 smartphone:my-0 rounded-lg border-2 border-blue-200 shadow-lg"
-          >
-            <div class="flex flex-row items-center">
+          <div class="flex-auto w-full smartphone:pt-3 tablet:pt-5">
+            <div class="overflow-y-scroll h-fit">
               <div
-                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
+                class="flex flex-col w-full h-fit overflow-y-scroll scroll-smooth p-4 tablet:text-[16px] smartphone:text-sm font-mono rounded-lg bg-white border-2 border-blue-200"
               >
-                Experience
-              </div>
-            </div>
-            <div class="flex-auto w-full">
-              <div class="overflow-y-scroll h-fit">
-                @for(work of workList; track work) {
-                <div class="smartphone:pt-3 tablet:pt-5">
-                  <app-work [work]="work"></app-work>
+                <div class="flex w-full items-center">
+                  <div class="basis-1/5 mr-5 flex justify-center">
+                    <img class="w-full max-w-44" src="ethz_logo.png" alt="" />
+                  </div>
+                  <div class="basis-4/5">
+                    <p>
+                      <span class="font-bold">MSc </span>
+                      <span>in Mechanical Engineering&nbsp;</span>
+                      <span class="font-bold">&#64;ETHZ</span>
+                      <span>, Zurich</span>
+                    </p>
+                    <div class="mt-1 w-fit">Sep. 2021 - June 2024</div>
+                  </div>
                 </div>
-                }
+                <div class="flex mt-8 w-full items-center">
+                  <div class="basis-1/5 w-full mr-5 flex justify-center">
+                    <img class="w-full max-w-44" src="logo-epfl.png" alt="" />
+                  </div>
+                  <div class="basis-4/5">
+                    <p>
+                      <span class="font-bold">BSc </span>
+                      <span>in Micro-engineering&nbsp;</span>
+                      <span class="font-bold">&#64;EPFL</span>
+                      <span>, Lausanne</span>
+                    </p>
+                    <div class="mt-1 w-fit">Sep. 2018 - June 2021</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          }
-          <!-- Projects -->
-          @if(selectedWidgets.includes('projects')){
-          <div
-            class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
-          >
-            <div class="flex flex-row items-center">
-              <div
-                class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
-              >
-                Projects
-              </div>
-            </div>
-            <div class="flex-auto w-full">
-              <div class="overflow-y-scroll h-fit">
-                @for(project of projectList; track project) {
-                <div class="smartphone:pt-3 tablet:pt-5">
-                  <app-project
-                    [project]="project"
-                    [widgetWidth]="
-                      w_right_window -
-                      (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
-                    "
-                  ></app-project>
-                </div>
-                }
-              </div>
-            </div>
-          </div>
-          }
         </div>
+        }
+      </div>
+      <!-- right window -->
+      <div
+        [style.width.px]="w_right_window"
+        class="flex-col bg-white laptop:border-l laptop:border-b-2 border-blue-400"
+      >
+        <!-- selection bar -->
+        <div
+          class="smartphone:hidden laptop:flex justify-start pl-11 py-2 bg-blue-500 border-b-2 border-blue-400"
+        >
+          <div
+            (click)="selectWidget('works')"
+            [style.opacity]="selectedWidgets.includes('works') ? '1' : '0.5'"
+            class="cursor-pointer h-10 w-10 rounded-xl p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+          >
+            <img
+              src="https://www.svgrepo.com/show/412382/experience.svg"
+              alt=""
+            />
+          </div>
+          <div
+            (click)="selectWidget('projects')"
+            [style.opacity]="selectedWidgets.includes('projects') ? '1' : '0.5'"
+            class="cursor-pointer h-10 w-10 rounded-xl ml-2 p-2 border-2 border-blue-400 bg-white hover:opacity-100 hover:shadow-lg"
+          >
+            <img
+              src="https://www.svgrepo.com/show/450795/deep-learning-project.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- Work Experience -->
+        @if(selectedWidgets.includes('works')){
+        <div
+          class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:mx-3 tablet:mx-6 laptop:my-6 smartphone:my-0 rounded-lg border-2 border-blue-200 shadow-lg"
+        >
+          <div class="flex flex-row items-center">
+            <div
+              class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
+            >
+              Experience
+            </div>
+          </div>
+          <div class="flex-auto w-full">
+            <div class="overflow-y-scroll h-fit">
+              @for(work of workList; track work) {
+              <div class="smartphone:pt-3 tablet:pt-5">
+                <app-work [work]="work"></app-work>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+        }
+        <!-- Projects -->
+        @if(selectedWidgets.includes('projects')){
+        <div
+          class="bg-blue-50 smartphone:p-3 tablet:p-5 smartphone:m-3 tablet:m-6 rounded-lg border-2 border-blue-200 shadow-lg"
+        >
+          <div class="flex flex-row items-center">
+            <div
+              class="tablet:text-4xl smartphone:text-3xl font-bold text-blue-400 mr-6"
+            >
+              Projects
+            </div>
+          </div>
+          <div class="flex-auto w-full">
+            <div class="overflow-y-scroll h-fit">
+              @for(project of projectList; track project) {
+              <div class="smartphone:pt-3 tablet:pt-5">
+                <app-project
+                  [project]="project"
+                  [widgetWidth]="
+                    w_right_window -
+                    (isLaptop || isTablet ? 2 * BIG_MARGIN : 2 * SMALL_MARGIN)
+                  "
+                ></app-project>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+        }
       </div>
     </div>
   </div>
 
-  <div class="snap-start">
-    <div class="w-full h-fit flex flex-col mb-12">
-      <div
-        class="flex justify-center items-center smartphone:px-10 tablet:px-16 h-40 w-full text-primaryColor text-4xl font-bold"
-      >
-        Drone Shots
+  <!-- Drone Shots -->
+  <div class="w-full h-fit flex flex-col mt-16 mb-12">
+    <div
+      class="flex justify-center items-center mb-6 smartphone:px-10 tablet:px-16 h-40 w-full text-primaryColor text-4xl font-bold"
+    >
+      Drone Shots
+    </div>
+    <div
+      class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center pl-12 smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0"
+    >
+      <div class="basis-3/4 w-full">
+        <video
+          poster="thumbnail-sydney.JPG"
+          controls
+          class="rounded-xl w-full h-fit max-h-screen object-cover"
+          src="drone.mov"
+          type="video/mov"
+          [autoplay]="false"
+          [muted]="true"
+          loop
+        ></video>
       </div>
       <div
-        class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center pl-12 smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0"
+        class="px-5 pb-8 basis-1/4 flex justify-center items-center text-primaryColor text-xl"
       >
-        <div class="basis-3/4 w-full">
-          <video
-            poster="thumbnail-sydney.JPG"
-            controls
-            class="rounded-xl w-full h-fit max-h-screen object-cover"
-            src="drone.mov"
-            type="video/mov"
-            [autoplay]="false"
-            [muted]="true"
-            loop
-          ></video>
-        </div>
-        <div
-          class="px-5 pb-8 basis-1/4 flex justify-center items-center text-primaryColor text-xl"
-        >
-          <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
-          <div>Sydney</div>
-        </div>
+        <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
+        <div>Sydney</div>
+      </div>
+    </div>
+    <div
+      class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0 mt-12"
+    >
+      <div class="basis-3/4">
+        <video
+          controls
+          class="rounded-xl w-full h-fit max-h-screen object-cover"
+          src="Western Australia by drone.mp4"
+          type="video/mp4"
+          [autoplay]="false"
+          [muted]="true"
+          loop
+        ></video>
       </div>
       <div
-        class="flex smartphone:flex-col-reverse laptop:flex-row w-full items-center smartphone:pl-5 smartphone:pr-5 tablet:pl-12 tablet:pr-12 laptop:pr-0 mt-12"
+        class="px-5 py-8 basis-1/4 flex justify-center items-center text-center text-primaryColor text-xl"
       >
-        <div class="basis-3/4">
-          <video
-            controls
-            class="rounded-xl w-full h-fit max-h-screen object-cover"
-            src="Western Australia by drone.mp4"
-            type="video/mp4"
-            [autoplay]="false"
-            [muted]="true"
-            loop
-          ></video>
-        </div>
-        <div
-          class="px-5 py-8 basis-1/4 flex justify-center items-center text-center text-primaryColor text-xl"
-        >
-          <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
-          <div class="w-fit">Western Australia</div>
-        </div>
+        <img class="w-8 h-8" src="icons/position-blue.svg" alt="" />
+        <div class="w-fit">Western Australia</div>
       </div>
     </div>
   </div>
