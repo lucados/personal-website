@@ -10,12 +10,11 @@ import { Work, works, Project, projects } from "../../interfaces/experience";
 import { WorkComponent } from "../../widgets/experiences/work/work.component";
 import { SkillsComponent } from "../../widgets/skills/skills.component";
 import { ProjectComponent } from "../../widgets/experiences/project/project.component";
-import { NgxModularDashComponent } from "ngx-modular-dash";
 
 @Component({
   selector: "app-home",
   standalone: true,
-  imports: [WorkComponent, SkillsComponent, ProjectComponent, NgxModularDashComponent],
+  imports: [WorkComponent, SkillsComponent, ProjectComponent],
   templateUrl: "./home.component.html",
   styleUrl: "./home.component.css",
 })

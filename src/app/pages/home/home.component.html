@@ -66,7 +66,7 @@
   <!-- Angular module library -->
   <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
     <div
-      class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+      class="flex justify-center items-center h-40 w-full text-primaryColor text-3xl tablet:text-4xl font-bold"
     >
       Ngx-modular-dash
     </div>
@@ -74,7 +74,7 @@
       class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
     >
       <div
-        class="laptop:basis-1/2 smartphone:px-6 tablet:px-12 laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-6 laptop:mb-0 flex flex-col"
+        class="laptop:basis-1/2 smartphone:px-6 tablet:px-12 h-fit laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-6 laptop:mb-0 flex flex-col"
       >
         <p>
           An elegant Dashboard component for Angular that can display 3 widgets
@@ -86,16 +86,16 @@
           project!
         </p>
         <div
-          class="w-fit flex justify-center mt-8 my-3 mx-auto py-2 px-4 bg-blue-500 shadow-lg rounded-lg text-white"
+          class="w-fit flex justify-center mt-8 my-3 mx-auto  bg-blue-500 shadow-lg rounded-lg text-white"
         >
-          <a href="https://www.npmjs.com/package/ngx-modular-dash"
-            >www.npmjs.com/package/ngx-modular-dash</a
+          <a class="py-2 px-4" href="https://www.npmjs.com/package/ngx-modular-dash"
+            >NPM Package</a
           >
         </div>
       </div>
-      <div class="laptop:basis-1/2 laptop:pl-3 relative">
+      <div class="laptop:basis-1/2 laptop:pl-3 relative h-fit w-full">
         <video
-          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
+          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] max-h-screen m-auto object-contain"
           src="demo-ngx-modular-dash.mp4"
           type="video/mp4"
           [autoplay]="true"
@@ -110,7 +110,7 @@
   <!-- Homestays.ch -->
   <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
     <div
-      class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+      class="flex justify-center items-center h-40 w-full text-primaryColor text-3xl tablet:text-4xl font-bold"
     >
       Homestays.ch
     </div>
@@ -124,14 +124,14 @@
           We offer a platform designed to help those looking for supplementary income by connecting them with the perfect roommate—an international student. By sharing part of your home, you can earn a steady income while also creating a meaningful cultural exchange.
         </p>
         <div
-          class="w-fit flex justify-center mt-8 my-3 mx-auto py-2 px-4 bg-blue-500 shadow-lg rounded-lg text-white"
+          class="w-fit flex justify-center mt-8 my-3 mx-auto bg-blue-500 shadow-lg rounded-lg text-white"
         >
-          <a href="https://homestays.ch">Homestays.ch</a>
+          <a class="py-2 px-4" href="https://homestays.ch">Homestays.ch</a>
         </div>
       </div>
       <div class="laptop:basis-1/2 laptop:pl-3 relative">
         <img
-          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
+          class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] max-h-screen m-auto object-contain"
           src="homestays.png"
           alt=""
         />
@@ -163,7 +163,7 @@
 
   <div class="w-full h-fit relative mt-16">
     <div
-      class="flex justify-center mb-6 items-center h-40 w-full text-primaryColor text-4xl font-bold"
+      class="flex justify-center mb-6 items-center h-40 w-full text-primaryColor text-3xl tablet:text-4xl font-bold"
     >
       Digital Resume
     </div>
@@ -378,7 +378,7 @@
   <!-- Drone Shots -->
   <div class="w-full h-fit flex flex-col mt-16 mb-12">
     <div
-      class="flex justify-center items-center mb-6 smartphone:px-10 tablet:px-16 h-40 w-full text-primaryColor text-4xl font-bold"
+      class="flex justify-center items-center mb-6 smartphone:px-10 tablet:px-16 h-40 w-full text-primaryColor text-3xl tablet:text-4xl font-bold"
     >
       Drone Shots
     </div>
@@ -389,7 +389,7 @@
         <video
           poster="thumbnail-sydney.JPG"
           controls
-          class="rounded-xl w-full h-fit max-h-screen object-cover"
+          class="rounded-xl w-full max-h-screen object-contain"
           src="drone.mov"
           type="video/mov"
           [autoplay]="false"
@@ -409,8 +409,9 @@
     >
       <div class="basis-3/4">
         <video
+        poster="thumbnail-WA.png"
           controls
-          class="rounded-xl w-full h-fit max-h-screen object-cover"
+          class="rounded-xl w-full max-h-screen object-contain"
           src="Western Australia by drone.mp4"
           type="video/mp4"
           [autoplay]="false"
