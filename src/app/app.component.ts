@@ -1,11 +1,12 @@
 import { Component, HostListener, OnInit } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
+import { NgxModularDashComponent } from 'ngx-modular-dash';
 //import { ScreenService } from "./services/screen.service";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgxModularDashComponent],
   templateUrl: "./app.component.html",
 })
 export class AppComponent {

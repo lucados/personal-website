@@ -62,10 +62,54 @@
     </div>
   </div>
 
+  <!-- Angular module library -->
+  <div class="snap-start">
+    <div class="w-full h-fit flex flex-col mb-8 p-5 laptop:p-12">
+      <div
+        class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+      >
+        Ngx-modular-dash
+      </div>
+      <div
+        class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
+      >
+        <div
+          class="laptop:basis-1/2 laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-3 laptop:mb-0"
+        >
+          <p>
+            An elegant Dashboard component for Angular that can display 3
+            widgets at the same time on computers and 2 on smartphones using
+            modular windows. You can include up to 8 custom widgets using
+            multi-slot content projection. Different parameters can be set as
+            input to customize your Dashboard (color theme, separations,
+            margins...).
+          </p>
+        </div>
+        <div class="laptop:basis-1/2 laptop:pl-3 relative">
+          <video
+            class="rounded-xl w-full max-w-[800px] laptop:max-w-[700px] h-fit max-h-screen m-auto object-cover"
+            src="demo-ngx-modular-dash.mov"
+            type="video/mov"
+            [autoplay]="true"
+            [muted]="true"
+            loop
+          ></video>
+          <div class="w-full h-3 absolute bottom-[0px] bg-white"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Resume page -->
   <div class="snap-start">
     <div class="w-full h-fit relative">
+      <div
+        class="flex justify-center items-center h-40 w-full text-primaryColor text-4xl font-bold"
+      >
+        Digital Resume
+      </div>
       <!-- slider -->
+      @if(selectedWidgets.length > 0) {
       <div
         [style.left.px]="w_left_window - PADDING"
         class="smartphone:hidden laptop:flex flex-col absolute h-full pb-[250px] w-fit"
@@ -93,6 +137,7 @@
           </div>
         </div>
       </div>
+      }
       <div class="flex-grow flex smartphone:flex-col laptop:flex-row w-full">
         <!-- left window -->
         <div
@@ -273,6 +318,7 @@
       </div>
     </div>
   </div>
+
   <div class="snap-start">
     <div class="w-full h-fit flex flex-col mb-12">
       <div
