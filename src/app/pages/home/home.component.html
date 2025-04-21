@@ -63,6 +63,46 @@
     </div>
   </div>
 
+   <!-- PhysicsLab -->
+   <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
+    <div
+      class="flex justify-center items-center h-40 w-full text-primaryColor text-3xl tablet:text-4xl font-bold"
+    >
+      PhysicsLab
+    </div>
+    <div
+      class="flex flex-col laptop:flex-row w-full h-fit items-center justify-between"
+    >
+      <div
+        class="laptop:basis-1/2 smartphone:px-6 tablet:px-12 h-fit laptop:pr-3 text-justify mx-auto max-w-[800px] laptop:max-w-[500px] mb-6 laptop:mb-0 flex flex-col"
+      >
+        <p>
+          an Angular web-editor designed for science teachers to help them develop course materials and create exams.
+          It features an intuitive grapher, an editor for mathematical expressions, and a suite of classic editing tools, making it easier for educators to present scientific concepts.
+        </p>
+        <div
+          class="w-fit flex justify-center mt-8 my-3 mx-auto  bg-blue-500 shadow-lg rounded-lg text-white"
+        >
+          <a class="py-2 px-4" href="https://www.physicslab.ch"
+            >PhysicsLab</a
+          >
+        </div>
+      </div>
+      <div class="laptop:basis-1/2 laptop:pl-3 relative h-fit w-full">
+        <video
+        playsinline
+          class=" w-full max-w-[800px] laptop:max-w-[700px] max-h-screen m-auto object-contain"
+          src="demo-physicslab.mp4"
+          type="video/mov"
+          [autoplay]="true"
+          [muted]="true"
+          loop
+        ></video>
+        <div class="w-full h-3 absolute bottom-[0px] bg-white"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Angular module library -->
   <div class="w-full h-fit flex flex-col mt-16 laptop:px-12">
     <div
