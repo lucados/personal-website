@@ -24,14 +24,32 @@ interface Section {
 
 export const works: Work[] = [
   {
-    title: "Full-stack developer (Freelance)",
+    title: "Full-stack developer",
+    date: "Dec. 2024 - Current",
+    location: "Lausanne",
+    institution: "Lab4Teachers.com",
+    tasks: [
+      "Development of a dynamic Web Application for generating, editing and managing educational content, including courses, structured-exams, Latex-style equations and graphics.",
+      "Implementation of different tools including an AI-agent (OpenAI API) using Angular and Node.js while deploying the application on Vercel with a MangoDB database.",
+    ],
+    skillNames: [
+      "Angular",
+      "JavaScript",
+      "Tailwind",
+      "NodeJs",
+      "MangoDB",
+      "Vercel",
+      "Azure",
+    ],
+  },
+  {
+    title: "Full-stack developer",
     date: "Aug. 2024 - Dec. 2024",
     location: "Lausanne",
     institution: "Homestays.ch",
     tasks: [
-      "Development and deployment of a web platform application in the housing market.",
-      "Frontend using Angular and Tailwind to meet client’s design needs.",
-      "Backend deployed on Vercel using NodeJS to communicate with a MangoDB database, different Azure services and various commercial APIs.",
+      "Development of a Web platform Application in the housing market for foreign students.",
+      "Responsible of the Frontend and Backend using Angular, NodeJS and MangoDB combined with different Azure services and various commercial APIs for automation (Stripe, GCP,...).",
     ],
     skillNames: [
       "Angular",
